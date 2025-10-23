@@ -1,0 +1,12 @@
+services:
+  api:
+    image: node:20-alpine
+    working_dir: /api
+    volumes:
+      - .:/api
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000

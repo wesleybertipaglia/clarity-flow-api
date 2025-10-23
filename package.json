@@ -1,0 +1,64 @@
+{
+  "name": "clarity-flow-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "ts-node --transpile-only src/server.ts",
+    "build": "tsc",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/rate-limit": "^10.3.0",
+    "@genkit-ai/googleai": "^1.20.0",
+    "@langchain/core": "^1.0.1",
+    "@langchain/google-genai": "^1.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "dotenv": "^17.2.2",
+    "fastify": "^5.6.1",
+    "genkit": "^1.20.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwks-rsa": "^3.2.0",
+    "langchain": "^1.0.1",
+    "pino-pretty": "^13.1.1",
+    "zod": "^3.25.76",
+    "zod-to-json-schema": "^3.24.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "lint-staged": "^16.2.5",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "lib": [
+        "ES2015",
+        "ES2022",
+        "DOM"
+      ],
+      "types": [
+        "node"
+      ]
+    }
+  }
+}
